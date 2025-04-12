@@ -1,6 +1,7 @@
 
 import './App.css'
-import MovieCard from './components/MovieCard'
+import Home from './pages/Home'
+
 
 function App() {
  
@@ -8,7 +9,7 @@ function App() {
   return (
     <>
      
-      <MovieCard movie={{title:"Abhijith Movie", release_date:"2026"}}/>
+      <Home/>
     </>
   )
 }
