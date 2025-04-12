@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      Hello world
+     
       <MovieCard movie={{title:"Abhijith Movie", release_date:"2026"}}/>
     </>
   )
