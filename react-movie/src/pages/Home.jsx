@@ -32,7 +32,7 @@ import MovieCard from "../components/MovieCard"
 
         <div className="movie-grid">
             {movies.map((movie) => 
-                movie.title.toLowerCase().startsWith(SearchQuery) && 
+                //movie.title.toLowerCase().startsWith(SearchQuery) && 
                 (<MovieCard movie={movie}/>)
             )}
         </div>
