@@ -19,7 +19,7 @@ import {searchMovies, getPopularMovies} from "../services/api.js"
             finally {}
             }
         
-    }, [])
+    }, []) //added content
     
     const handleSearch = (e) =>{
         e.preventDefault();
