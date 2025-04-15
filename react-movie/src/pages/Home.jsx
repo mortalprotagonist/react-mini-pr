@@ -6,11 +6,23 @@ import {searchMovies, getPopularMovies} from "../services/api.js"
  function Home(){
     
     const [SearchQuery,setSearchQuery] = useState("");
-    const [movies, setMovies] =([])
+    const [movies, setMovies] =useState([]);
+    const [error,setError] =useState(null);
+    const [loading,setLoading] = useState(true);
     
-    useEffect(() => {},[])
+    useEffect(() => {
+        const loadPopularMovies = async ()=> {
+            try{
+                const popularMovies =await getPopularMovies();
+                setMovies(popularMovies)
+            }catch (err) {}
+            finally {}
+            }
+        
+    }, [])
     
-    const handleSearch = () =>{
+    const handleSearch = (e) =>{
+        e.preventDefault();
         //alert("Submitted")
     }; 
 
