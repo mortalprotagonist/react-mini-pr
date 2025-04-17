@@ -15,10 +15,14 @@ import {searchMovies, getPopularMovies} from "../services/api.js"
             try{
                 const popularMovies =await getPopularMovies();
                 setMovies(popularMovies)
-            }catch (err) {}
-            finally {}
+            }catch (err) {
+                console.log(err)
+                setError("Failed to load movies....")
             }
-        
+            finally {}
+            setLoading(false)
+            }
+        loadPopularMovies()
     }, []) //added content
     
     const handleSearch = (e) =>{
@@ -42,6 +46,8 @@ import {searchMovies, getPopularMovies} from "../services/api.js"
                 </button>
         </form>
 
+
+        {loading ? <div className="loading">Loading.....</div>}
         <div className="movie-grid">
             {movies.map((movie) => 
                 //movie.title.toLowerCase().startsWith(SearchQuery) && 
