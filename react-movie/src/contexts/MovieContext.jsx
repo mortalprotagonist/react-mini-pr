@@ -10,7 +10,17 @@ export const MovieProvider = ({children}) => {
     useEffect(() => {
         const storedFavs = localStorage.getItem("favorites")
 
-        if (storedFavs) setFavorites(JSON.parse(storedFavs))
+        if (storedFavs) {
+            try {
+                setFavorites(JSON.parse(storedFavs))
+            } catch (e) {
+                console.error("Error parsing favorites from localStorage:", e);
+                setFavorites([]) // Initialize with an empty array in case of parsing errors
+            }
+        } else {
+            // If storedFavs is null, initialize favorites with an empty array.
+            setFavorites([])
+        }
     }, [])
 
     useEffect(() => {
